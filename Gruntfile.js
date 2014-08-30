@@ -1,12 +1,6 @@
 // Generated on 2014-08-19 using generator-webapp 0.4.9
 'use strict';
 
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
-
 module.exports = function (grunt) {
 
     // Load grunt tasks automatically
@@ -30,12 +24,10 @@ module.exports = function (grunt) {
         // Watches files for changes and runs tasks based on the changed files
         watch: {
             bower: {
-                files: ['bower.json'],
-                tasks: ['bowerInstall']
+                files: ['bower.json']
             },
             js: {
                 files: ['<%= config.app %>/scripts/{,*/}*.js'],
-                tasks: ['jshint'],
                 options: {
                     livereload: true
                 }
@@ -102,20 +94,6 @@ module.exports = function (grunt) {
             server: '.tmp'
         },
 
-        // Make sure code styles are up to par and there are no obvious mistakes
-        jshint: {
-            options: {
-                jshintrc: '.jshintrc',
-                reporter: require('jshint-stylish')
-            },
-            all: [
-                'Gruntfile.js',
-                '<%= config.app %>/scripts/{,*/}*.js',
-                '!<%= config.app %>/scripts/vendor/*',
-                'test/spec/{,*/}*.js'
-            ]
-        },
-
         // Add vendor prefixed styles
         autoprefixer: {
             options: {
@@ -131,14 +109,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Automatically inject Bower components into the HTML file
-        bowerInstall: {
-            app: {
-                src: ['<%= config.app %>/index.html'],
-                exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
-            }
-        },
-
         // Renames files for browser caching purposes
         rev: {
             dist: {
@@ -147,13 +117,13 @@ module.exports = function (grunt) {
                         '<%= config.dist %>/scripts/{,*/}*.js',
                         '<%= config.dist %>/styles/{,*/}*.css',
                         '<%= config.dist %>/images/{,*/}*.*',
-                        '<%= config.dist %>/styles/fonts/{,*/}*.*',
                         '<%= config.dist %>/*.{ico,png}'
                     ]
                 }
             }
         },
 
+        // '<%= config.dist %>/styles/fonts/{,*/}*.*',
         // Reads HTML for usemin blocks to enable smart builds that automatically
         // concat, minify and revision files. Creates configurations in memory so
         // additional tasks can operate on them
@@ -176,6 +146,10 @@ module.exports = function (grunt) {
         // The following *-min tasks produce minified files in the dist folder
         imagemin: {
             dist: {
+                options: {
+                  optimizationLevel: 7,
+                  progressive: true
+                },
                 files: [{
                     expand: true,
                     cwd: '<%= config.app %>/images',
@@ -217,6 +191,18 @@ module.exports = function (grunt) {
             }
         },
 
+        compress: {
+          main: {
+            options: {
+              mode: 'gzip'
+            },
+            files: [
+              { expand: true, src: ['<%= config.dist %>/scripts/{,*/}*.js'], dest: '.', ext: '.js.gz' }
+              // { expand: true, src: ['<%= config.dist %>/styles/{,*/}*.css'], dest: '<%= config.dist %>/styles/', ext: '.gz.css'}
+            ]
+          }
+        },
+
         // By default, your `index.html`'s <!-- Usemin block --> will take care of
         // minification. These next options are pre-configured if you do not wish
         // to use the Usemin blocks.
@@ -252,6 +238,7 @@ module.exports = function (grunt) {
                     cwd: '<%= config.app %>',
                     dest: '<%= config.dist %>',
                     src: [
+                        'php/{,*/}*.*',
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'images/{,*/}*.webp',
@@ -278,9 +265,6 @@ module.exports = function (grunt) {
         // Run some tasks in parallel to speed up build process
         concurrent: {
             server: [
-                'copy:styles'
-            ],
-            test: [
                 'copy:styles'
             ],
             dist: [
@@ -311,21 +295,6 @@ module.exports = function (grunt) {
         grunt.task.run([target ? ('serve:' + target) : 'serve']);
     });
 
-    grunt.registerTask('test', function (target) {
-        if (target !== 'watch') {
-            grunt.task.run([
-                'clean:server',
-                'concurrent:test',
-                'autoprefixer'
-            ]);
-        }
-
-        grunt.task.run([
-            'connect:test',
-            'mocha'
-        ]);
-    });
-
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
@@ -337,12 +306,11 @@ module.exports = function (grunt) {
         'copy:dist',
         'rev',
         'usemin',
-        'htmlmin'
+        'htmlmin',
+        'compress'
     ]);
 
     grunt.registerTask('default', [
-        'newer:jshint',
-        'test',
         'build'
     ]);
 };
