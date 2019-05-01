@@ -661,20 +661,3 @@ FileETag None
 #        SetOutputFilter INCLUDES
 #    </FilesMatch>
 # </IfModule>
-
-
-# Old site redirection
-Redirect /solutions_disponibles.php http://www.logicus.qc.ca
-Redirect /clients.php http://www.logicus.qc.ca
-Redirect /solutions_disponibles.php http://www.logicus.qc.ca
-Redirect /clients.php http://www.logicus.qc.ca
-Redirect /presse.php http://www.logicus.qc.ca
-Redirect /index.php http://www.logicus.qc.ca
-Redirect /contacts.php http://www.logicus.qc.ca
-Redirect /solutions_disponibles.php http://www.logicus.qc.ca
-
-# BEGIN GZIP
-<ifmodule mod_deflate.c>
-AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript image/svg+xml
-</ifmodule>
-# END GZIP
