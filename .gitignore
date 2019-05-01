@@ -5,3 +5,4 @@ dist
 app/app/components
 app/components
 test/bower_components
+.DS_STORE
