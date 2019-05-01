@@ -164,31 +164,6 @@ Spirito = {
     return this;
   },
 
-  // Function to init maps
-  initMaps: function(element) {
-    element = element !== undefined ? element : "#google-map";
-    $(element).gMap({
-      controls: {
-        panControl: true,
-      zoomControl: true,
-      mapTypeControl: false,
-      scaleControl: true,
-      streetViewControl: false,
-      overviewMapControl: true
-      },
-      address: "39 des Alouettes, Ste-Anne-des-Lacs, Québec, Canada, J0R1B0",
-      zoom: 15,
-      markers:[
-    {
-      address: "39 des Alouettes, Ste-Anne-des-Lacs, Québec, Canada, J0R1B0",
-      html: "Nos bureaux sont ici!<br>31 des Alouettes<br>Ste-Anne-des-Lacs, Qu&eacute;bec, Canada  J0R1B0<br>T&eacute;l&eacute;phone: 450 224-7474<br>Sans frais: 1 888 824-7474<br>Prendre la sortie (57) de la (15 Nord) l'Autoroute des Laurentides"
-    }
-    ]
-    });
-
-    return this;
-  },
-
   // Function to initialize fade effect on scroll for main home wrapper
   fadeHome: function() {
     //Get scroll position of window
