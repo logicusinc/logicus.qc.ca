@@ -86,8 +86,7 @@ module.exports = function (grunt) {
                     dot: true,
                     src: [
                         '.tmp',
-                        '<%= config.dist %>/*',
-                        '!<%= config.dist %>/.git*'
+                        '<%= config.dist %>',
                     ]
                 }]
             },
@@ -198,36 +197,9 @@ module.exports = function (grunt) {
             },
             files: [
               { expand: true, src: ['<%= config.dist %>/scripts/{,*/}*.js'], dest: '.', ext: '.js.gz' }
-              // { expand: true, src: ['<%= config.dist %>/styles/{,*/}*.css'], dest: '<%= config.dist %>/styles/', ext: '.gz.css'}
             ]
           }
         },
-
-        // By default, your `index.html`'s <!-- Usemin block --> will take care of
-        // minification. These next options are pre-configured if you do not wish
-        // to use the Usemin blocks.
-        // cssmin: {
-        //     dist: {
-        //         files: {
-        //             '<%= config.dist %>/styles/main.css': [
-        //                 '.tmp/styles/{,*/}*.css',
-        //                 '<%= config.app %>/styles/{,*/}*.css'
-        //             ]
-        //         }
-        //     }
-        // },
-        // uglify: {
-        //     dist: {
-        //         files: {
-        //             '<%= config.dist %>/scripts/scripts.js': [
-        //                 '<%= config.dist %>/scripts/scripts.js'
-        //             ]
-        //         }
-        //     }
-        // },
-        // concat: {
-        //     dist: {}
-        // },
 
         // Copies remaining files to places other tasks can use
         copy: {
@@ -272,6 +244,20 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
+        },
+
+        shell: {
+            setUp: {
+                command: 'git worktree add -f dist gh-pages'
+            },
+            deploy: {
+                command: [
+                    'cd dist',
+                    'git add --all',
+                    'git commit -m "Deploy to gh-pages"',
+                    'git push origin gh-pages',
+                ].join('&&')
+            }
         }
     });
 
@@ -308,6 +294,14 @@ module.exports = function (grunt) {
         'usemin',
         'htmlmin',
         'compress'
+    ]);
+
+    grunt.registerTask('deploy', [
+        'clean:dist',
+        'shell:setUp',
+        'build',
+        'shell:deploy',
+        'clean:dist'
     ]);
 
     grunt.registerTask('default', [
