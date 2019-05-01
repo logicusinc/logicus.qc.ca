@@ -248,7 +248,10 @@ module.exports = function (grunt) {
 
         shell: {
             setUp: {
-                command: 'git worktree add -f dist gh-pages'
+                command: [
+                    'git worktree add -f dist gh-pages',
+                    'git pull',
+                ].join('&&')
             },
             deploy: {
                 command: [
