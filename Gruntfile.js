@@ -249,6 +249,7 @@ module.exports = function (grunt) {
         shell: {
             setUp: {
                 command: [
+                    'rm -rf dist',
                     'git worktree add -f dist gh-pages',
                     'cd dist',
                     'git pull origin gh-pages',
@@ -260,6 +261,7 @@ module.exports = function (grunt) {
                     'git add --all',
                     'git commit -m "Deploy to gh-pages"',
                     'git push origin gh-pages',
+                    'cd ..',
                 ].join('&&')
             }
         }
@@ -301,11 +303,19 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('deploy', [
-        'clean:dist',
         'shell:setUp',
-        'build',
+        'useminPrepare',
+        'concurrent:dist',
+        'autoprefixer',
+        'concat',
+        'cssmin',
+        'uglify',
+        'copy:dist',
+        'rev',
+        'usemin',
+        'htmlmin',
+        'compress',
         'shell:deploy',
-        'clean:dist'
     ]);
 
     grunt.registerTask('default', [
