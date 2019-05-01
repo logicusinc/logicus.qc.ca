@@ -250,7 +250,8 @@ module.exports = function (grunt) {
             setUp: {
                 command: [
                     'git worktree add -f dist gh-pages',
-                    'git pull',
+                    'cd dist',
+                    'git pull origin gh-pages',
                 ].join('&&')
             },
             deploy: {
