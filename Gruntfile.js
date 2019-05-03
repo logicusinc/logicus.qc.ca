@@ -86,7 +86,9 @@ module.exports = function (grunt) {
                     dot: true,
                     src: [
                         '.tmp',
-                        '<%= config.dist %>',
+                        '<%= config.dist %>/*',
+                        '!<%= config.dist %>/.git*',
+                        '!<%= config.dist %>/CNAME',
                     ]
                 }]
             },
@@ -304,17 +306,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('deploy', [
         'shell:setUp',
-        'useminPrepare',
-        'concurrent:dist',
-        'autoprefixer',
-        'concat',
-        'cssmin',
-        'uglify',
-        'copy:dist',
-        'rev',
-        'usemin',
-        'htmlmin',
-        'compress',
+        'build',
         'shell:deploy',
     ]);
 
