@@ -143,12 +143,6 @@
         "category": "other",
         "description": "Logicus est partenaire certifié",
         "image": "acomba.jpg"
-      },
-      {
-        "title": "Kaspersky",
-        "category": "other",
-        "description": "Logicus est revendeur Kaspersky",
-        "image": "kaspersky.jpg"
       }
     ]
   },

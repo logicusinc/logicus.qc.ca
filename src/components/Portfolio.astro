@@ -15,7 +15,7 @@ const filterKeys = Object.keys(t.portfolio.filters) as Array<keyof typeof t.port
     <div class="flex flex-wrap justify-center gap-2 mb-10">
       {filterKeys.map((key) => (
         <button
-          class:list={['filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors border', key === 'all' ? 'bg-brand text-white border-brand' : 'bg-white text-gray-600 border-gray-300 hover:border-brand hover:text-brand']}
+          class:list={['filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors border cursor-pointer', key === 'all' ? 'bg-brand text-white border-brand' : 'bg-white text-gray-600 border-gray-300 hover:bg-brand hover:text-white hover:border-brand active:bg-brand active:text-white active:border-brand']}
           data-filter={key === 'all' ? '*' : key}
         >
           {t.portfolio.filters[key]}
