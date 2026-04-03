@@ -1,0 +1,26 @@
+---
+import type { TranslationData } from '@/i18n';
+interface Props { t: TranslationData; }
+const { t } = Astro.props;
+---
+
+<section id="clients" class="py-20 bg-navy">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-4">{t.clients.heading}</h2>
+    <p class="text-center text-gray-300 max-w-2xl mx-auto mb-16">{t.clients.subtitle}</p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center">
+      {t.clients.logos.map((logo) => (
+        <div class="flex items-center justify-center">
+          {'url' in logo && logo.url ? (
+            <a href={logo.url} target="_blank" rel="noopener">
+              <img src={`/images/logos/${logo.image}`} alt={logo.name} class="h-16 max-w-[120px] object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" loading="lazy" />
+            </a>
+          ) : (
+            <img src={`/images/logos/${logo.image}`} alt={logo.name} class="h-16 max-w-[120px] object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" loading="lazy" />
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

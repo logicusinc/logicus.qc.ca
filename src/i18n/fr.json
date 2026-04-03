@@ -1,0 +1,292 @@
+{
+  "lang": "fr",
+  "dir": "ltr",
+  "locale": "fr-CA",
+  "switchLang": "en",
+  "switchLabel": "English",
+  "switchUrl": "/en/",
+
+  "meta": {
+    "title": "Logicus Informatique | Logiciel sur mesure depuis 1996",
+    "description": "Logicus Informatique se spécialise dans le développement de logiciels sur mesure avec WinDev, WebDev et WinDev Mobile. Solutions logicielles évolutives et adaptées à vos besoins depuis 1996.",
+    "keywords": "logicus, logiciel sur mesure, WinDev, WebDev, WinDev Mobile, développement logiciel, programmation, Québec, solutions logicielles"
+  },
+
+  "nav": {
+    "home": "Accueil",
+    "about": "Qui sommes-nous",
+    "team": "L'équipe",
+    "portfolio": "Portfolio",
+    "clients": "Clients",
+    "services": "Services",
+    "contact": "Contact"
+  },
+
+  "hero": {
+    "company": "LOGICUS INFORMATIQUE INC",
+    "subtitle": "Logiciel sur mesure et solutions logicielles depuis 1996",
+    "button": "En savoir plus"
+  },
+
+  "about": {
+    "heading": "Vous êtes chez LOGICUS — Une entreprise à votre écoute",
+    "text": "Logicus Informatique se spécialise dans le développement de logiciels sur mesure. Nos solutions sont développées avec WinDev, WebDev et WinDev Mobile, des outils de développement reconnus pour leur puissance et leur fiabilité. Nous offrons des solutions logicielles évolutives, adaptées à vos besoins et éprouvées depuis 1996."
+  },
+
+  "whatWeDo": {
+    "heading": "Ce que nous faisons?",
+    "subtitle": "Répondre à vos besoins les plus simples comme les plus complexes.",
+    "items": [
+      {
+        "title": "LOGICIELS SUR MESURES",
+        "text": "Nous développons des logiciels sur mesure qui répondent précisément à vos besoins d'affaires. Chaque solution est unique et adaptée à votre réalité."
+      },
+      {
+        "title": "LOGICIELS DISPONIBLES",
+        "text": "Nous offrons une gamme de logiciels prêts à l'emploi pour différents secteurs d'activité, incluant la gestion de marinas, le transport et plus encore."
+      },
+      {
+        "title": "SERVICES DISPONIBLES",
+        "text": "De l'analyse des besoins à la formation, en passant par la programmation et le support technique, nous vous accompagnons à chaque étape."
+      }
+    ]
+  },
+
+  "team": {
+    "heading": "Notre équipe",
+    "subtitle": "Nos projets sont créés par des gens qui ont la passion et l'amour du métier. Notre objectif est de créer des projets uniques et conviviaux.",
+    "members": [
+      { "title": "VENTES", "subtitle": "Notre plaisir est de vous informer", "image": "team_1.jpg", "email": "ventes@logicus.qc.ca" },
+      { "title": "SERVICE À LA CLIENTÈLE", "subtitle": "Notre plaisir est de vous servir", "image": "team_2.jpg", "email": "services@logicus.qc.ca" },
+      { "title": "PROGRAMMATION", "subtitle": "Notre plaisir est de vous écouter", "image": "team_3.jpg", "email": "info@logicus.qc.ca" },
+      { "title": "SUPPORT TECHNIQUE", "subtitle": "Notre plaisir est de vous aider", "image": "team_4.jpg", "email": "support@logicus.qc.ca" }
+    ]
+  },
+
+  "awards": {
+    "heading": "Distinctions",
+    "items": [
+      {
+        "title": "LAURÉAT Gala des ZÉNITHS",
+        "subtitle": "Chambre de Commerce et d'Industrie de la Rivière du Nord"
+      },
+      {
+        "title": "LAURÉAT Gala des OCTAS",
+        "subtitle": "Fédération de l'informatique du Québec"
+      }
+    ]
+  },
+
+  "quote": {
+    "text": "Dites à tout le monde ce que vous voulez faire et quelqu'un vous aidera à l'accomplir.",
+    "author": "W. Clement Stone"
+  },
+
+  "portfolio": {
+    "heading": "Notre Travail",
+    "subtitle": "Qualité et respect des cahiers de charges, des échéanciers et des budgets.",
+    "filters": {
+      "all": "Tout",
+      "custom": "Logiciels sur mesure",
+      "available": "Logiciels disponibles",
+      "other": "Logiciels autres"
+    },
+    "items": [
+      {
+        "title": "Assurance",
+        "category": "custom",
+        "description": "Collective et pour expatriés",
+        "image": "assurance.jpg"
+      },
+      {
+        "title": "Construction",
+        "category": "custom",
+        "description": "Secteur commercial et résidentiel",
+        "image": "construction.jpg"
+      },
+      {
+        "title": "Production",
+        "category": "custom",
+        "description": "Manufacturière",
+        "image": "production.jpg"
+      },
+      {
+        "title": "InfoBillard",
+        "category": "available",
+        "description": "Logiciel de gestion des salles de billard et des simulateurs de golf",
+        "url": "https://www.infobillard.ca",
+        "image": "infobillard.jpg"
+      },
+      {
+        "title": "i-Expert",
+        "category": "available",
+        "description": "Logiciel de gestion des interventions d'experts",
+        "url": "https://www.i-expert.ca",
+        "image": "i-expert.jpg"
+      },
+      {
+        "title": "TransInfo",
+        "category": "available",
+        "description": "Logiciel de gestion du transport de marchandises",
+        "url": "https://www.transinfo.ca",
+        "image": "transinfo.jpg"
+      },
+      {
+        "title": "InfoMarina",
+        "category": "available",
+        "description": "Logiciel de gestion des places à quai",
+        "url": "https://www.infomarina.ca",
+        "image": "infomarina.jpg"
+      },
+      {
+        "title": "Acomba",
+        "category": "other",
+        "description": "Logicus est partenaire certifié",
+        "image": "acomba.jpg"
+      },
+      {
+        "title": "Kaspersky",
+        "category": "other",
+        "description": "Logicus est revendeur Kaspersky",
+        "image": "kaspersky.jpg"
+      }
+    ]
+  },
+
+  "clients": {
+    "heading": "Nos clients",
+    "subtitle": "Nous avons su aider les entreprises suivantes...",
+    "logos": [
+      { "name": "Globe", "image": "globe.png" },
+      { "name": "EBC", "image": "ebc.png", "url": "https://www.ebcinc.com" },
+      { "name": "ARJ", "image": "arj.png" },
+      { "name": "Bolar", "image": "bolar.png", "url": "https://www.bolar.com" },
+      { "name": "Legault", "image": "legault.png" },
+      { "name": "ASCO", "image": "asco.png" },
+      { "name": "Garda", "image": "garda.png", "url": "https://www.garda.com" },
+      { "name": "Paccar", "image": "paccar.png", "url": "https://www.paccar.com" },
+      { "name": "GH GES", "image": "ghges.png", "url": "https://www.ghges.com/" },
+      { "name": "Univesta", "image": "univesta.png", "url": "https://www.univesta.com" },
+      { "name": "EPAR", "image": "epar.png" },
+      { "name": "Octantis", "image": "octantis.png", "url": "https://www.octantis.ca" }
+    ]
+  },
+
+  "testimonials": {
+    "heading": "Témoignages",
+    "items": [
+      {
+        "text": "Nous sommes très satisfaits du travail accompli par Logicus. Leur logiciel nous a permis d'optimiser notre gestion quotidienne et d'offrir un meilleur service à notre clientèle.",
+        "author": "Mirko Bonneville",
+        "company": "Hot Dog Café"
+      },
+      {
+        "text": "L'équipe de Logicus a su comprendre nos besoins complexes et développer un outil parfaitement adapté à notre réalité d'entreprise de construction.",
+        "author": "Simon St-Cyr",
+        "company": "EBC inc."
+      },
+      {
+        "text": "Logicus est un partenaire fiable qui a su nous accompagner dans la croissance de notre entreprise avec des solutions informatiques de qualité.",
+        "author": "Michel Gauthier",
+        "company": "Globe inc."
+      },
+      {
+        "text": "Le professionnalisme et la disponibilité de l'équipe de Logicus sont remarquables. Ils ont développé un outil qui répond parfaitement à nos besoins de gestion.",
+        "author": "Lyne Cholette",
+        "company": "L'École du Show business"
+      },
+      {
+        "text": "Depuis plusieurs années, Logicus nous fournit un logiciel qui est devenu indispensable à nos opérations quotidiennes. Le support technique est toujours rapide et efficace.",
+        "author": "France St-Louis",
+        "company": "Amusements A.M.I."
+      },
+      {
+        "text": "Logicus a su développer un système adapté aux besoins particuliers de notre institution d'enseignement. Leur expertise technique est impressionnante.",
+        "author": "Robert Darlington",
+        "company": "Collège de Saint-Jérôme"
+      },
+      {
+        "text": "La collaboration avec Logicus a toujours été agréable et professionnelle. Leur solution logicielle nous a permis de moderniser nos processus d'affaires.",
+        "author": "Martin Leclerc",
+        "company": "GSI Musique"
+      },
+      {
+        "text": "L'équipe de Logicus a compris les particularités de la gestion municipale et nous a fourni un outil performant et facile d'utilisation.",
+        "author": "Jacques Déprès",
+        "company": "Ville de Saint-Antoine"
+      },
+      {
+        "text": "Nous avons choisi Logicus pour leur expertise et leur capacité à livrer des solutions de qualité dans les délais prévus. Nous ne sommes pas déçus.",
+        "author": "Anne Vivien",
+        "company": "Le Groupe BMG Québec"
+      },
+      {
+        "text": "Le logiciel de transport développé par Logicus a transformé notre façon de travailler. C'est un outil essentiel pour notre entreprise de transport.",
+        "author": "Steve McLaughlin",
+        "company": "Les transports Inter-Nord inc."
+      },
+      {
+        "text": "Logicus nous accompagne depuis plusieurs années avec un logiciel fiable et un service à la clientèle exceptionnel. Nous les recommandons sans hésitation.",
+        "author": "Pascal Grand'Maison",
+        "company": "Grand'maison produits pétroliers"
+      },
+      {
+        "text": "L'expertise de Logicus en développement sur mesure nous a permis d'obtenir exactement l'outil dont nous avions besoin pour nos analyses.",
+        "author": "Guido Di Rodolfo",
+        "company": "Analytiqs"
+      }
+    ]
+  },
+
+  "services": {
+    "heading": "Services disponibles",
+    "subtitle": "Depuis 1996 !",
+    "items": [
+      {
+        "title": "Analyse des besoins",
+        "text": "Nous prenons le temps de bien comprendre vos besoins afin de vous proposer la solution la plus adaptée. L'analyse est une étape cruciale qui assure le succès de votre projet.",
+        "email": "info@logicus.qc.ca"
+      },
+      {
+        "title": "Programmation",
+        "text": "Nos programmeurs expérimentés développent des solutions robustes et performantes avec WinDev, WebDev et WinDev Mobile. Code de qualité, testé et documenté.",
+        "email": "info@logicus.qc.ca"
+      },
+      {
+        "title": "Implantation",
+        "text": "Nous assurons une implantation complète de votre logiciel, incluant l'installation, la configuration, la migration de vos données et la mise en production.",
+        "email": "info@logicus.qc.ca"
+      },
+      {
+        "title": "Maintenance",
+        "text": "Nous offrons un service de maintenance continue pour assurer le bon fonctionnement de vos applications et les faire évoluer selon vos besoins changeants.",
+        "email": "support@logicus.qc.ca"
+      },
+      {
+        "title": "Formation et support",
+        "text": "Nous offrons des formations personnalisées pour vos équipes ainsi qu'un support technique réactif pour répondre à toutes vos questions.",
+        "email": "support@logicus.qc.ca"
+      },
+      {
+        "title": "Hébergement",
+        "text": "Nous offrons des solutions d'hébergement fiables et sécurisées pour vos applications et vos données. Serveurs performants et sauvegardes régulières.",
+        "email": "info@logicus.qc.ca"
+      }
+    ]
+  },
+
+  "contact": {
+    "heading": "Contact",
+    "description": "Nous aimons avoir de vos nouvelles. Communiquer avec nous pour nous dire bonjour ou tout simplement pour vous informer.",
+    "phone": "+1 450-224-7474",
+    "tollFree": "+1 888-824-7474",
+    "email": "info@logicus.qc.ca",
+    "phoneLabel": "Téléphone",
+    "tollFreeLabel": "Sans frais",
+    "emailLabel": "Courriel"
+  },
+
+  "footer": {
+    "copyright": "LOGICUS INFORMATIQUE INC. Tous droits réservés."
+  }
+}

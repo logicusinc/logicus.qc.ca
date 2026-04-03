@@ -1,0 +1,44 @@
+---
+import type { TranslationData } from '@/i18n';
+
+interface Props {
+  t: TranslationData;
+}
+
+const { t } = Astro.props;
+---
+
+<!doctype html>
+<html lang={t.lang} dir={t.dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <meta name="keywords" content={t.meta.keywords} />
+
+    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={t.locale} />
+    <meta property="og:site_name" content="Logicus Informatique" />
+
+    <link rel="alternate" hreflang={t.switchLang} href={t.switchUrl} />
+    <link rel="canonical" href={t.lang === 'fr' ? 'https://www.logicus.qc.ca/' : 'https://www.logicus.qc.ca/en/'} />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-navy-dark text-gray-200 font-sans antialiased">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

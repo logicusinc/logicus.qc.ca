@@ -1,0 +1,78 @@
+---
+import type { TranslationData } from '@/i18n';
+interface Props { t: TranslationData; }
+const { t } = Astro.props;
+
+const filterKeys = Object.keys(t.portfolio.filters) as Array<keyof typeof t.portfolio.filters>;
+---
+
+<section id="portfolio" class="py-20 bg-white text-navy-dark">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">{t.portfolio.heading}</h2>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10">{t.portfolio.subtitle}</p>
+
+    <!-- Filters -->
+    <div class="flex flex-wrap justify-center gap-2 mb-10">
+      {filterKeys.map((key) => (
+        <button
+          class:list={['filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors border', key === 'all' ? 'bg-brand text-white border-brand' : 'bg-white text-gray-600 border-gray-300 hover:border-brand hover:text-brand']}
+          data-filter={key === 'all' ? '*' : key}
+        >
+          {t.portfolio.filters[key]}
+        </button>
+      ))}
+    </div>
+
+    <!-- Grid -->
+    <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {t.portfolio.items.map((item) => (
+        <div class="portfolio-item rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 group" data-category={item.category}>
+          <div class="relative overflow-hidden bg-gray-100">
+            <img src={`/images/portfolio/${item.image}`} alt={item.title} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <div class="absolute inset-0 bg-brand/0 group-hover:bg-brand/20 transition-colors flex items-center justify-center">
+              {'url' in item && item.url ? (
+                <a href={item.url} target="_blank" rel="noopener" class="opacity-0 group-hover:opacity-100 transition-opacity">
+                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              ) : null}
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-navy-dark text-lg mb-1">
+              {'url' in item && item.url ? (
+                <a href={item.url} target="_blank" rel="noopener" class="hover:text-brand transition-colors">{item.title}</a>
+              ) : (
+                item.title
+              )}
+            </h3>
+            <p class="text-gray-600 text-sm">{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.portfolio-item');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => { b.classList.remove('bg-brand', 'text-white', 'border-brand'); b.classList.add('bg-white', 'text-gray-600', 'border-gray-300'); });
+      btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-300');
+      btn.classList.add('bg-brand', 'text-white', 'border-brand');
+
+      const filter = (btn as HTMLElement).dataset.filter;
+      items.forEach(item => {
+        if (filter === '*' || (item as HTMLElement).dataset.category === filter) {
+          (item as HTMLElement).style.display = '';
+        } else {
+          (item as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

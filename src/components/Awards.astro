@@ -1,0 +1,25 @@
+---
+import type { TranslationData } from '@/i18n';
+interface Props { t: TranslationData; }
+const { t } = Astro.props;
+---
+
+<section class="py-20 bg-white text-navy-dark">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">{t.awards.heading}</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {t.awards.items.map((award) => (
+        <div class="text-center p-8 rounded-xl border border-gray-200 hover:border-brand hover:shadow-lg transition-all duration-300">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand text-white mb-6">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-brand mb-2">{award.title}</h3>
+          <p class="text-gray-600">{award.subtitle}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

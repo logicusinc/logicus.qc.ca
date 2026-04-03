@@ -1,0 +1,32 @@
+---
+import type { TranslationData } from '@/i18n';
+interface Props { t: TranslationData; }
+const { t } = Astro.props;
+---
+
+<section id="top" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-navy-dark via-navy to-navy-dark"></div>
+  <div class="absolute inset-0 bg-[url('/images/logicus/logicus-intro-2.jpg')] bg-cover bg-center opacity-20"></div>
+
+  <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
+      {t.hero.company}
+    </h1>
+
+    <p class="text-xl sm:text-2xl md:text-3xl text-brand font-light mb-10">
+      {t.hero.subtitle}
+    </p>
+
+    <a href="#about" class="inline-block px-8 py-3 bg-brand text-white font-bold rounded-full hover:bg-brand-dark transition-colors text-lg">
+      {t.hero.button}
+    </a>
+
+    <div class="mt-12">
+      <a href="#about" class="inline-flex items-center justify-center text-brand hover:text-brand-light transition-colors animate-bounce">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

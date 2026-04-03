@@ -1,0 +1,61 @@
+---
+import type { TranslationData } from '@/i18n';
+interface Props { t: TranslationData; }
+const { t } = Astro.props;
+---
+
+<nav class="fixed top-0 w-full z-50 bg-navy-dark/95 backdrop-blur-sm border-b border-navy-light/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="#top" class="text-brand font-bold text-xl tracking-wide">
+        LOGICUS <span class="text-white">INFORMATIQUE</span>
+      </a>
+
+      <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-brand" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <div class="hidden md:flex items-center gap-1">
+        <a href="#top" class="nav-link">{t.nav.home}</a>
+        <a href="#about" class="nav-link">{t.nav.about}</a>
+        <a href="#team" class="nav-link">{t.nav.team}</a>
+        <a href="#portfolio" class="nav-link">{t.nav.portfolio}</a>
+        <a href="#clients" class="nav-link">{t.nav.clients}</a>
+        <a href="#services" class="nav-link">{t.nav.services}</a>
+        <a href="#contact" class="nav-link">{t.nav.contact}</a>
+        <a href={t.switchUrl} class="ml-3 px-3 py-1.5 rounded border border-brand text-brand text-sm font-semibold hover:bg-brand hover:text-white transition-colors">
+          {t.switchLabel}
+        </a>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col gap-1">
+        <a href="#top" class="nav-link-mobile">{t.nav.home}</a>
+        <a href="#about" class="nav-link-mobile">{t.nav.about}</a>
+        <a href="#team" class="nav-link-mobile">{t.nav.team}</a>
+        <a href="#portfolio" class="nav-link-mobile">{t.nav.portfolio}</a>
+        <a href="#clients" class="nav-link-mobile">{t.nav.clients}</a>
+        <a href="#services" class="nav-link-mobile">{t.nav.services}</a>
+        <a href="#contact" class="nav-link-mobile">{t.nav.contact}</a>
+        <a href={t.switchUrl} class="mt-2 text-center px-3 py-2 rounded border border-brand text-brand font-semibold hover:bg-brand hover:text-white transition-colors">
+          {t.switchLabel}
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu?.classList.add('hidden')));
+</script>
+
+<style>
+  .nav-link { @apply px-3 py-2 text-sm font-medium text-gray-300 hover:text-brand transition-colors rounded uppercase tracking-wide; }
+  .nav-link-mobile { @apply px-3 py-2 text-sm font-medium text-gray-300 hover:text-brand transition-colors uppercase tracking-wide; }
+</style>

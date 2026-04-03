@@ -1,0 +1,27 @@
+---
+import type { TranslationData } from '@/i18n';
+interface Props { t: TranslationData; }
+const { t } = Astro.props;
+---
+
+<footer id="contact" class="py-20 bg-navy-dark border-t border-navy-light/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">
+      <span class="text-brand">{t.contact.heading}</span>
+    </h2>
+
+    <div class="text-center">
+      <p class="text-gray-300 mb-8 text-lg">{t.contact.description}</p>
+
+      <div class="space-y-2 text-gray-300">
+        <p>{t.contact.tollFreeLabel}: <a href={`tel:${t.contact.tollFree.replace(/\s/g, '')}`} class="hover:text-brand">{t.contact.tollFree}</a></p>
+        <p>{t.contact.phoneLabel}: <a href={`tel:${t.contact.phone.replace(/\s/g, '')}`} class="hover:text-brand">{t.contact.phone}</a></p>
+        <p><a href={`mailto:${t.contact.email}`} class="text-brand hover:underline">{t.contact.email}</a></p>
+      </div>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-navy-light/30 text-center">
+      <p class="text-gray-500 text-sm">{t.footer.copyright}</p>
+    </div>
+  </div>
+</footer>
