@@ -14,7 +14,6 @@ const { t } = Astro.props;
       <p class="text-gray-300 mb-8 text-lg">{t.contact.description}</p>
 
       <div class="space-y-2 text-gray-300">
-        <p>{t.contact.tollFreeLabel}: <a href={`tel:${t.contact.tollFree.replace(/\s/g, '')}`} class="hover:text-brand">{t.contact.tollFree}</a></p>
         <p>{t.contact.phoneLabel}: <a href={`tel:${t.contact.phone.replace(/\s/g, '')}`} class="hover:text-brand">{t.contact.phone}</a></p>
         <p><a href={`mailto:${t.contact.email}`} class="text-brand hover:underline">{t.contact.email}</a></p>
       </div>
